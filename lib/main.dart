@@ -16,5 +16,4 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Fitness',
       home: HomePage(),
     );
-  }
-}
+  
