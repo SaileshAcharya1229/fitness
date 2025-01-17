@@ -1,8 +1,12 @@
+import 'package:fitness/models/category_model.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  List<CategoryModel> categories = [];
 
   @override
   Widget build(BuildContext context) {
