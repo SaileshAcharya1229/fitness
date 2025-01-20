@@ -1,15 +1,29 @@
 import 'package:fitness/models/category_model.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   List<CategoryModel> categories = [];
+
+  void _getCategories() {
+    categories = CategoryModel.getCategories();
+  }
+
+  @override
+  void initstate() {
+    _getCategories();
+  }
 
   @override
   Widget build(BuildContext context) {
+    _getCategories();
     return Scaffold(
       appBar: appBar(),
       backgroundColor: Colors.white,
@@ -40,14 +54,16 @@ class HomePage extends StatelessWidget {
               Container(
                 height: 150,
                 color: Colors.green,
-                child: ListView.builder(itemBuilder: (context, index) {
-                  if (index == 0) {
-                    return Text('salad');
-                  } else if (index == 1) {
-                    return Text("cake");
-                  }
-                  return Container();
-                }),
+                child: ListView.builder(
+                    itemCount: categories.length,
+                    itemBuilder: (context, index) {
+                      if (index == 0) {
+                        return Text('salad');
+                      } else if (index == 1) {
+                        return Text("cake");
+                      }
+                      return Container();
+                    }),
               )
             ],
           )
