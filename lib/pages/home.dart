@@ -63,12 +63,10 @@ class _HomePageState extends State<HomePage> {
                         return Text("cake");
                       }
                       return Container(
-                        height:50,
-                        width: 50,
-                        decoration:BoxDecoration(
-                          color:categories[index].boxColor
-                        )
-                      );
+                          height: 50,
+                          width: 50,
+                          decoration:
+                              BoxDecoration(color: categories[index].boxColor));
                     }),
               )
             ],
