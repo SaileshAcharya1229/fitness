@@ -62,7 +62,13 @@ class _HomePageState extends State<HomePage> {
                       } else if (index == 1) {
                         return Text("cake");
                       }
-                      return Container();
+                      return Container(
+                        height:50,
+                        width: 50,
+                        decoration:BoxDecoration(
+                          color:categories[index].boxColor
+                        )
+                      );
                     }),
               )
             ],
