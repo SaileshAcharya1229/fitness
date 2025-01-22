@@ -56,6 +56,7 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.green,
                 child: ListView.builder(
                     itemCount: categories.length,
+                    scrollDirection:Axis.horizontal,
                     itemBuilder: (context, index) {
                       if (index == 0) {
                         return Text('salad');
